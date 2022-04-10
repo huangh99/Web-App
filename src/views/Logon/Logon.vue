@@ -91,7 +91,7 @@ export default {
       if (res.status === 0) {
         Dialog.alert({
           message: '注册成功！',
-          confirmButtonColor: 'green'
+          confirmButtonColor: '#19CAAD'
         }).then(() => {
           // 跳转到主页
           this.$router.push('/login')
