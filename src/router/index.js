@@ -8,6 +8,9 @@ import Main from '@/views/Main/Main'
 import Home from '@/views/Home/Home'
 import Knowledge from '@/views/Knowledge/Knowledge'
 import User from '@/views/User/User'
+import Security from '@/views/User/Security/Security'
+import ChangePassword from '@/views/User/Security/ChangePassword/ChangePassword'
+import Information from '@/views/User/Information/Information'
 
 Vue.use(VueRouter)
 
@@ -30,8 +33,13 @@ const routes = [
       // 定义我的路由规则
       { path: '/user', component: User }
     ]
-  }
-
+  },
+  // 定义安全与密码页面路由规则
+  { path: '/user/security', component: Security },
+  // 定义修改密码页面的路由规则
+  { path: '/user/security/changePwd', component: ChangePassword },
+  // 定义个人资料页面的路由规则
+  { path: '/user/information', component: Information }
 ]
 
 const router = new VueRouter({

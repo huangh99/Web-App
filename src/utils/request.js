@@ -18,7 +18,8 @@ request.interceptors.request.use(
     // 展示 loading 效果
     Toast.loading({
       message: '加载中...', // 文本内容
-      duration: 0 // 展示时长(ms)，值为 0 时，toast 不会消失
+      duration: 0, // 展示时长(ms)，值为 0 时，toast 不会消失
+      forbidClick: true
     })
     return config
   },
@@ -34,6 +35,11 @@ request.interceptors.response.use(
     return response
   },
   error => {
+    Toast.fail({
+      message: '请求失败！',
+      forbidClick: true
+    })
+    // Toast.clear()
     return Promise.reject(error)
   }
 )

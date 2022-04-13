@@ -24,55 +24,34 @@
     <van-sticky>
     <van-nav-bar ref="navBar" title="为你推荐"/>
     </van-sticky>
-    <!-- 列表内容 -->
-    <van-list
-      v-model="loading"
-      :finished="finished"
-      finished-text="没有更多了"
-      @load="onLoad"
-    >
-      <van-cell v-for="item in list" :key="item" :title="item" />
-    </van-list>
+    <ArtList :article-id="article.id"></ArtList>
   </div>
 </template>
 
 <script>
+import ArtList from '@/components/ArtList/ArtList'
 export default {
   name: 'Home',
-  data () {
+  components: {
+    ArtList
+  },
+  data() {
     return {
+      article: {
+        id: 1
+      },
       images: [
         'https://img01.yzcdn.cn/vant/apple-1.jpg',
         'https://img01.yzcdn.cn/vant/apple-2.jpg'
       ],
-      value: '',
-      list: [],
-      loading: false,
-      finished: false,
-      isFixed: false
+      value: ''
+
     }
   },
   methods: {
-    onLoad () {
-      // 异步更新数据
-      // setTimeout 仅做示例，真实场景中一般为 ajax 请求
-      setTimeout(() => {
-        for (let i = 0; i < 10; i++) {
-          this.list.push(this.list.length + 1)
-        }
-
-        // 加载状态结束
-        this.loading = false
-
-        // 数据全部加载完成
-        if (this.list.length >= 40) {
-          this.finished = true
-        }
-      }, 1000)
-    }
 
   },
-  mounted () {
+  mounted() {
   }
 }
 </script>
