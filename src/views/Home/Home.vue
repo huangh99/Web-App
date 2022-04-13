@@ -24,7 +24,7 @@
     <van-sticky>
     <van-nav-bar ref="navBar" title="为你推荐"/>
     </van-sticky>
-    <ArtList :article-id="article.id"></ArtList>
+    <ArtList :article-id="classId"></ArtList>
   </div>
 </template>
 
@@ -37,9 +37,7 @@ export default {
   },
   data() {
     return {
-      article: {
-        id: 1
-      },
+      classId: 1,
       images: [
         'https://img01.yzcdn.cn/vant/apple-1.jpg',
         'https://img01.yzcdn.cn/vant/apple-2.jpg'

@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     async getList() {
-      const { data: res } = await getArticleInfoAPI({ params: ({ page: this.page }) })
+      const { data: res } = await getArticleInfoAPI({ params: ({ page: this.page, classId: this.articleId }) })
       if (res.status === 0) {
         this.articleList = [...this.articleList, ...res.data]
         this.page++
