@@ -11,6 +11,7 @@ import User from '@/views/User/User'
 import Security from '@/views/User/Security/Security'
 import ChangePassword from '@/views/User/Security/ChangePassword/ChangePassword'
 import Information from '@/views/User/Information/Information'
+import SearchResult from '@/views/SearchResult/SearchResult'
 
 Vue.use(VueRouter)
 
@@ -39,7 +40,9 @@ const routes = [
   // 定义修改密码页面的路由规则
   { path: '/user/security/changePwd', component: ChangePassword },
   // 定义个人资料页面的路由规则
-  { path: '/user/information', component: Information }
+  { path: '/user/information', component: Information },
+  // 定义搜索结果页面的路由规则
+  { path: '/knowledge/searchResult/:kw', component: SearchResult, props: true }
 ]
 
 const router = new VueRouter({

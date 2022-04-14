@@ -5,7 +5,7 @@
       <template #title>
         <div class="title-box">
           <!-- 标题 -->
-          <span>{{article.title}}-----{{article.cover.length}}</span>
+          <span>{{article.title}}-----{{article.id}}</span>
           <!-- 单张图片 -->
           <img v-lazy="article.cover[0]" v-if="article.cover.length===1" alt="" class="thumb">
         </div>

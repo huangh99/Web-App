@@ -65,7 +65,7 @@
 
 <script>
 import { updateUserInfoAPI, getUserInfoAPI } from '@/api/userAPI'
-import timeFormat from '@/utils/functions'
+import { timeFormat } from '@/utils/functions'
 import cities from '@/views/User/Information/cities'
 import NavBar from '@/components/NavBar/NavBar'
 import { Dialog } from 'vant'

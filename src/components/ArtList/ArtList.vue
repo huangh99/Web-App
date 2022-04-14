@@ -8,7 +8,7 @@
       finished-text="没有更多了"
       @load="onLoad"
     >
-      <ArtItem v-for="item in articleList" :key="item.id" :article="item"></ArtItem>
+      <ArtItem v-for="(item,index) in articleList" :key="index" :article="item"></ArtItem>
     </van-list>
   </div>
 </template>
