@@ -12,6 +12,7 @@ import Security from '@/views/User/Security/Security'
 import ChangePassword from '@/views/User/Security/ChangePassword/ChangePassword'
 import Information from '@/views/User/Information/Information'
 import SearchResult from '@/views/SearchResult/SearchResult'
+import ArticleDetail from '@/views/ArticleDetail/ArticleDetail'
 
 Vue.use(VueRouter)
 
@@ -42,7 +43,9 @@ const routes = [
   // 定义个人资料页面的路由规则
   { path: '/user/information', component: Information },
   // 定义搜索结果页面的路由规则
-  { path: '/knowledge/searchResult/:kw', component: SearchResult, props: true }
+  { path: '/knowledge/searchResult/:kw', component: SearchResult, props: true },
+  // 定义文章详情页面的路由规则
+  { path: '/knowledge/article/:id', component: ArticleDetail, props: true }
 ]
 
 const router = new VueRouter({

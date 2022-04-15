@@ -1,5 +1,5 @@
 import request from '@/utils/request'
-// import qs from 'qs'
+import qs from 'qs'
 
 // 获取文章信息的 API 接口
 export const getArticleInfoAPI = (data) => {
@@ -30,4 +30,37 @@ export const getArticleSearchResultAPI = (data1, data2) => {
       page: data2
     }
   })
+}
+
+// 获取文章详情的 API（形参中的 id 是文章的 id）
+export const getArticleDetailAPI = (id) => {
+  return request.get(`/article/detail/${id}`)
+}
+
+// 点赞文章的 API 接口
+export const setStarArticleAPI = articleId => {
+  return request.post('/article/star', qs.stringify({
+    target: articleId
+  }))
+}
+
+// 取消点赞文章的 API 接口
+export const cancelStarArticleAPI = articleId => {
+  return request.post('/article/cancelstar', qs.stringify({
+    target: articleId
+  }))
+}
+
+// 关注作者的 API 接口
+export const setFollowAuthorAPI = authorId => {
+  return request.post('/article/follow', qs.stringify({
+    target: authorId
+  }))
+}
+
+// 取消关注作者的 API 接口
+export const cancelFollowAuthorAPI = authorId => {
+  return request.post('/article/cancelfollow', qs.stringify({
+    target: authorId
+  }))
 }

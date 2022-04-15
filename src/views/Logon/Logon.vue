@@ -79,7 +79,7 @@ export default {
     }
   },
   methods: {
-    onSubmit(values) {
+    onSubmit() {
       this.logon()
     },
     // 返回，点击跳转登录页面
