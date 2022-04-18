@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       articleList: [],
-      loading: false,
+      loading: true,
       finished: false,
       page: 1
     }

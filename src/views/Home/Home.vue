@@ -11,7 +11,14 @@
     </van-swipe>
     <!-- grid宫格导航 -->
     <van-grid border>
-      <van-grid-item v-for="value in 8" :key="value" icon="photo-o" text="文字" to="/" square/>
+      <van-grid-item icon="photo-o" text="签到" to="/" square/>
+      <van-grid-item icon="photo-o" text="课程" to="/" square/>
+      <van-grid-item icon="photo-o" text="答题" to="/" square/>
+      <van-grid-item icon="photo-o" text="视频" to="/" square/>
+      <van-grid-item icon="photo-o" text="社区交流" to="/" square/>
+      <van-grid-item icon="photo-o" text="积分兑换" to="/" square/>
+      <van-grid-item icon="photo-o" text="我的计划" to="/" square/>
+      <van-grid-item icon="photo-o" text="活动推荐" to="/" square/>
     </van-grid>
     <!-- 滚动通知栏 -->
     <van-notice-bar left-icon="volume-o" mode="closeable" scrollable color="#1989fa" background="#ecf9ff">技111111111111111111111111111术是开发它的人的共同灵魂。</van-notice-bar>

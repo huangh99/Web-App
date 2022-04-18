@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '@/store/index'
+import { Dialog } from 'vant'
 
 // 导入需要的组件
 import Login from '@/views/Login/Login'
@@ -48,8 +50,28 @@ const routes = [
   { path: '/knowledge/article/:id', component: ArticleDetail, props: true }
 ]
 
+const pagePathArr = ['/user', '/home', '/knowledge']
+
 const router = new VueRouter({
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (pagePathArr.indexOf(to.path) !== -1) {
+    // 从store中获取token的值
+    const tokenStr = store.state.tokenInfo.token
+    if (tokenStr) {
+      next()
+    } else {
+      Dialog.alert({
+        message: '请先登录'
+      }).then(() => {
+        next('/login')
+      })
+    }
+  } else {
+    next()
+  }
 })
 
 export default router
