@@ -38,13 +38,19 @@
         <van-button icon="good-job-o" type="danger" plain size="small" v-else @click="setStar">点赞</van-button>
       </div>
     </div>
+    <ArtComment :articleId="id"></ArtComment>
   </div>
 </template>
 
 <script>
 import { getArticleDetailAPI, setFollowAuthorAPI, cancelFollowAuthorAPI, setStarArticleAPI, cancelStarArticleAPI } from '@/api/articleAPI'
+import ArtComment from '@/components/ArtComment/ArtComment'
 export default {
   name: 'ArticleDetail',
+  components: {
+    ArtComment
+  },
+  // 路由传递的参数 文章id
   props: ['id'],
   data() {
     return {
@@ -72,7 +78,6 @@ export default {
     },
     async setFollowAuthor() {
       const { data: res } = await setFollowAuthorAPI(this.article.author_id)
-      console.log(res)
       if (res.status === 0) {
         this.$toast.success('关注成功！')
         this.article.is_follow = 1

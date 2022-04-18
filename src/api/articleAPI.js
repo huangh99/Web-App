@@ -64,3 +64,30 @@ export const cancelFollowAuthorAPI = authorId => {
     target: authorId
   }))
 }
+
+// 获取文章评论信息的 API 接口
+export const getCommentsAPI = (articleId) => {
+  return request.get(`/article/comments/${articleId}`)
+}
+
+// 发表文章评论信息的 API 接口
+export const postCommentAPI = (articleId, content) => {
+  return request.post('/article/comment', qs.stringify({
+    articleId: articleId,
+    content: content
+  }))
+}
+
+// 点赞文章评论的额 API 接口
+export const addCommentLikeAPI = (commentId) => {
+  return request.post('/article/comment/addlike', qs.stringify({
+    commentId: commentId
+  }))
+}
+
+// 取消点赞文章评论的 API 接口
+export const cancelCommentLikeAPI = (commentId) => {
+  return request.post('/article/comment/cancellike', qs.stringify({
+    commentId: commentId
+  }))
+}

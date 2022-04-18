@@ -46,24 +46,18 @@ export default {
   methods: {
     async getList(isRefresh) {
       const { data: res } = await getArticleSearchResultAPI(this.keyword, this.page)
-      // if (res.status === 0) {
-      if (isRefresh) {
-        if (res.data) {
+      if (res.data) {
+        if (isRefresh) {
           this.articleList = [...res.data, ...this.articleList]
           this.isLoading = false
+        } else {
+          this.articleList = [...this.articleList, ...res.data]
+          this.loading = false
         }
       } else {
-        this.articleList = [...this.articleList, ...res.data]
-        this.loading = false
-      }
-      if (res.status === 1) {
         this.isLoading = false
         this.finished = true
       }
-      // }
-      // else {
-      //   this.finished = true
-      // }
     },
     onLoad() {
       this.page++
