@@ -15,6 +15,8 @@ import ChangePassword from '@/views/User/Security/ChangePassword/ChangePassword'
 import Information from '@/views/User/Information/Information'
 import SearchResult from '@/views/SearchResult/SearchResult'
 import ArticleDetail from '@/views/ArticleDetail/ArticleDetail'
+import Questions from '@/views/Questions/Questions'
+import AnswerResults from '@/views/Questions/AnswerResults/AnswerResults'
 
 Vue.use(VueRouter)
 
@@ -47,7 +49,11 @@ const routes = [
   // 定义搜索结果页面的路由规则
   { path: '/knowledge/searchResult/:kw', component: SearchResult, props: true },
   // 定义文章详情页面的路由规则
-  { path: '/knowledge/article/:id', component: ArticleDetail, props: true }
+  { path: '/knowledge/article/:id', component: ArticleDetail, props: true },
+  // 定义答题页面的路由规则
+  { path: '/home/questions', component: Questions },
+  // 定义答题结果页面的路由规则
+  { path: '/home/questions/results', component: AnswerResults }
 ]
 
 const pagePathArr = ['/user', '/home', '/knowledge']
