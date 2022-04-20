@@ -40,6 +40,7 @@
 
 <script>
 import { Dialog } from 'vant'
+import { getQuestionListAPI } from '@/api/articleAPI'
 export default {
   name: 'Questions',
   data() {
@@ -47,80 +48,10 @@ export default {
       answers: ['', '', '', '', '', '', '', '', '', ''],
       current: 0,
       currentQuestion: [],
-      questionList: [{
-        title: '现代计算机是根据（）提出的原理制造出来的',
-        option_A: '莫奇莱',
-        option_B: '艾仑.图灵',
-        option_C: '乔治.布尔',
-        option_D: '冯.诺曼依',
-        answer: 'D'
-      }, {
-        title: '最适合信息管理的计算机语言是()',
-        option_A: '汇编语言',
-        option_B: '机器语言',
-        option_C: 'FORTRAN语言',
-        option_D: '数据库语言',
-        answer: 'D'
-      },
-      {
-        title: '第四代计算机，采用的电子器件为()',
-        option_A: '集成电器',
-        option_B: '晶体管',
-        option_C: '电子管',
-        option_D: '大规模集成电路',
-        answer: 'D'
-      }, {
-        title: '最适合信息管理的计算机语言是()',
-        option_A: '汇编语言',
-        option_B: '机器语言',
-        option_C: 'FORTRAN语言',
-        option_D: '数据库语言',
-        answer: 'D'
-      }, {
-        title: '最适合信息管理的计算机语言是()',
-        option_A: '汇编语言',
-        option_B: '机器语言',
-        option_C: 'FORTRAN语言',
-        option_D: '数据库语言',
-        answer: 'D'
-      }, {
-        title: '最适合信息管理的计算机语言是()',
-        option_A: '汇编语言',
-        option_B: '机器语言',
-        option_C: 'FORTRAN语言',
-        option_D: '数据库语言',
-        answer: 'D'
-      }, {
-        title: '最适合信息管理的计算机语言是()',
-        option_A: '汇编语言',
-        option_B: '机器语言',
-        option_C: 'FORTRAN语言',
-        option_D: '数据库语言',
-        answer: 'D'
-      }, {
-        title: '最适合信息管理的计算机语言是()',
-        option_A: '汇编语言',
-        option_B: '机器语言',
-        option_C: 'FORTRAN语言',
-        option_D: '数据库语言',
-        answer: 'D'
-      }, {
-        title: '最适合信息管理的计算机语言是()',
-        option_A: '汇编语言',
-        option_B: '机器语言',
-        option_C: 'FORTRAN语言',
-        option_D: '数据库语言',
-        answer: 'D'
-      }, {
-        title: '最适合信息管理的计算机语言是()',
-        option_A: '汇编语言',
-        option_B: '机器语言',
-        option_C: 'FORTRAN语言',
-        option_D: '数据库语言',
-        answer: 'D'
-      }]
+      questionList: []
     }
   },
+  props: ['cateId'],
   methods: {
     previous() {
       this.current--
@@ -131,6 +62,8 @@ export default {
       this.currentQuestion = this.questionList[this.current]
     },
     submit() {
+      this.$store.commit('initAnswer', this.answers)
+      this.$store.commit('initQuestion', this.questionList)
       this.$router.push('/home/questions/results')
     },
     selectOption(option) {
@@ -142,7 +75,7 @@ export default {
         message: '当前答题还未完成，是否退出？'
       })
         .then(() => {
-          this.$router.back()
+          this.$router.push('/home')
         })
         .catch(() => {
           // on cancel
@@ -155,10 +88,17 @@ export default {
       }).then(() => {
 
       })
+    },
+    async getQuestionList() {
+      const { data: res } = await getQuestionListAPI(this.cateId)
+      if (res.status === 0) {
+        this.questionList = res.data
+        this.currentQuestion = this.questionList[this.current]
+      }
     }
   },
   created() {
-    this.currentQuestion = this.questionList[this.current]
+    this.getQuestionList()
     Dialog.alert({
       title: '提示',
       message: '点击确认开始答题，5分钟时间倒计时！'

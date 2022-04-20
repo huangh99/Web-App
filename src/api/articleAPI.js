@@ -91,3 +91,8 @@ export const cancelCommentLikeAPI = (commentId) => {
     commentId: commentId
   }))
 }
+
+// 获取问题信息的 API 接口
+export const getQuestionListAPI = (cateId) => {
+  return request.get(`/article/questions/${cateId}`)
+}

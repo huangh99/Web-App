@@ -15,7 +15,7 @@
             round
             width="100px"
             height="100px"
-            :src="require('@/assets/default_user_pic.jpeg')"
+            :src="require('@/assets/images/default_user_pic.jpeg')"
             v-else
             @click="showImg"
           />
@@ -93,7 +93,7 @@ export default {
     showImg() {
       let imgUrl = this.userInfo.user_pic
       if (!this.userInfo.user_pic) {
-        imgUrl = require('@/assets/default_user_pic.jpeg')
+        imgUrl = require('@/assets/images/default_user_pic.jpeg')
       }
       ImagePreview({
         images: [imgUrl],
@@ -102,7 +102,7 @@ export default {
     },
     onChangeIcon() {
       this.overlayShow = true
-      this.fileInfo.avatar = this.userInfo.user_pic ? this.userInfo.user_pic : require('@/assets/default_user_pic.jpeg')
+      this.fileInfo.avatar = this.userInfo.user_pic ? this.userInfo.user_pic : require('@/assets/images/default_user_pic.jpeg')
     },
     afterRead(file) {
       this.fileInfo.avatar = file.content

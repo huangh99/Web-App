@@ -29,6 +29,12 @@ export default new Vuex.Store({
       // this 表示当前的 new 出来的 store 实例对象
       this.commit('saveStateToStorage')
     },
+    initQuestion(state, questionList) {
+      state.questionList = questionList
+    },
+    initAnswer(state, answerList) {
+      state.answerList = answerList
+    },
     // 将 state 持久化存储到本地
     saveStateToStorage(state) {
       localStorage.setItem('state', JSON.stringify(state))
