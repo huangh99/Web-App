@@ -84,9 +84,9 @@ export default {
     finish() {
       Dialog.alert({
         title: '提示',
-        message: '时间到！'
+        message: '时间到,将自动提交！'
       }).then(() => {
-
+        this.submit()
       })
     },
     async getQuestionList() {

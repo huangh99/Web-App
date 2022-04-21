@@ -11,7 +11,7 @@
     </van-swipe>
     <!-- grid宫格导航 -->
     <van-grid border>
-      <van-grid-item icon="photo-o" text="签到" to="/" square/>
+      <van-grid-item icon="sign" text="签到" to="/home/signin" square/>
       <van-grid-item icon="photo-o" text="课程" to="/" square/>
       <van-grid-item icon="records" text="答题" to="/home/questions" square/>
       <van-grid-item icon="photo-o" text="视频" to="/" square/>

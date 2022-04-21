@@ -19,6 +19,7 @@ import QuestionsList from '@/views/Questions/QuestionsList/QuestionsList'
 import Questions from '@/views/Questions/Questions'
 import AnswerResults from '@/views/Questions/AnswerResults/AnswerResults'
 import ResultDetail from '@/views/Questions/ResultDetail/ResultDetail'
+import SignIn from '@/views/SignIn/SignIn'
 
 Vue.use(VueRouter)
 
@@ -59,7 +60,9 @@ const routes = [
   // 定义答题结果页面的路由规则
   { path: '/home/questions/results', component: AnswerResults },
   // 定义结果详情页面的路由规则
-  { path: '/home/questions/detail', component: ResultDetail }
+  { path: '/home/questions/detail', component: ResultDetail },
+  // 定义签到页面路由规则
+  { path: '/home/signin', component: SignIn }
 ]
 
 const pagePathArr = ['/user', '/home', '/knowledge']
