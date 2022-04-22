@@ -5,6 +5,8 @@
     left-text="返回"
     :right-text="rightText"
     left-arrow
+    fixed
+    placeholder
     @click-left="onClickLeft"
     @click-right="onClickRight"
   />

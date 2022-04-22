@@ -181,7 +181,7 @@ export default {
         /deep/.van-calendar__month-title{
           display: none;
         }
-        /deep/.van-calendar__day--multiple-selected,/deep/.van-calendar__day--start,/deep/.van-calendar__day--end{
+        /deep/.van-calendar__day--multiple-selected,/deep/.van-calendar__day--start,/deep/.van-calendar__day--end,/deep/.van-calendar__day--multiple-middle{
           border-radius: 50%;
         }
       }

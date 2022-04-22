@@ -14,7 +14,7 @@
       <van-grid-item icon="sign" text="签到" to="/home/signin" square/>
       <van-grid-item icon="photo-o" text="课程" to="/" square/>
       <van-grid-item icon="records" text="答题" to="/home/questions" square/>
-      <van-grid-item icon="photo-o" text="视频" to="/" square/>
+      <van-grid-item icon="video-o" text="视频" to="/home/videos" square/>
       <van-grid-item icon="photo-o" text="社区交流" to="/" square/>
       <van-grid-item icon="photo-o" text="积分兑换" to="/" square/>
       <van-grid-item icon="photo-o" text="我的计划" to="/" square/>

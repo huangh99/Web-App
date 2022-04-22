@@ -78,7 +78,7 @@ export const postCommentAPI = (articleId, content) => {
   }))
 }
 
-// 点赞文章评论的额 API 接口
+// 点赞文章评论的 API 接口
 export const addCommentLikeAPI = (commentId) => {
   return request.post('/article/comment/addlike', qs.stringify({
     commentId: commentId

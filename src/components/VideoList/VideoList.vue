@@ -1,5 +1,5 @@
 <template>
-  <div class="artList-box">
+  <div class="list-box">
     <!-- 列表内容 -->
     <van-list
       v-model="loading"
@@ -8,28 +8,28 @@
       finished-text="没有更多了"
       @load="onLoad"
     >
-      <ArtItem v-for="(item,index) in articleList" :key="index" :article="item"></ArtItem>
+      <VideoItem v-for="item in videoList" :key="item.id" :video="item"></VideoItem>
     </van-list>
   </div>
 </template>
 
 <script>
-import ArtItem from '@/components/ArtItem/ArtItem'
-import { getArticleInfoAPI } from '@/api/articleAPI'
+import { getVideoInfoAPI } from '@/api/videoAPI'
+import VideoItem from '@/components/VideoItem/VideoItem'
 export default {
-  name: 'ArtList',
+  name: 'VideoList',
   components: {
-    ArtItem
+    VideoItem
   },
   props: {
-    articleId: {
+    cateId: {
       type: Number, // 数值类型
       required: true // 必填项
     }
   },
   data() {
     return {
-      articleList: [],
+      videoList: [],
       loading: true,
       finished: false,
       page: 1
@@ -37,9 +37,9 @@ export default {
   },
   methods: {
     async getList() {
-      const { data: res } = await getArticleInfoAPI({ params: ({ page: this.page, classId: this.articleId }) })
+      const { data: res } = await getVideoInfoAPI(this.page, this.cateId)
       if (res.status === 0) {
-        this.articleList = [...this.articleList, ...res.data]
+        this.videoList = [...this.videoList, ...res.data]
         this.page++
         this.loading = false
       } else {
@@ -51,9 +51,6 @@ export default {
     }
   },
   created() {
-    // this.getList()
-  },
-  mounted() {
     this.getList()
   }
 

@@ -20,6 +20,8 @@ import Questions from '@/views/Questions/Questions'
 import AnswerResults from '@/views/Questions/AnswerResults/AnswerResults'
 import ResultDetail from '@/views/Questions/ResultDetail/ResultDetail'
 import SignIn from '@/views/SignIn/SignIn'
+import VideoShow from '@/views/VideoShow/VideoShow'
+import VideoDetail from '@/views/VideoDetail/VideoDetail'
 
 Vue.use(VueRouter)
 
@@ -62,7 +64,11 @@ const routes = [
   // 定义结果详情页面的路由规则
   { path: '/home/questions/detail', component: ResultDetail },
   // 定义签到页面路由规则
-  { path: '/home/signin', component: SignIn }
+  { path: '/home/signin', component: SignIn },
+  // 定义视频列表页面的路由规则
+  { path: '/home/videos', component: VideoShow },
+  // 定义视频详情页面的路由规则
+  { path: '/home/videos/detail/:id', component: VideoDetail, props: true }
 ]
 
 const pagePathArr = ['/user', '/home', '/knowledge']
