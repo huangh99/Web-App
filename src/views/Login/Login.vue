@@ -17,10 +17,15 @@
         type="password"
         name="密码"
         label="密码"
-        left-icon="user-circle-o"
+        left-icon="icon-password"
+        icon-prefix="iconfont"
         placeholder="请输入密码"
         :rules="rules.password"
-      />
+      >
+        <template #left-icon>
+          <span class="iconfont icon-password"></span>
+        </template>
+      </van-field>
       <div style="margin: 16px;">
         <van-button round block type="info" native-type="submit">登录</van-button>
       </div>

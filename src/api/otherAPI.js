@@ -17,3 +17,22 @@ export const getSignInAPI = (month, year) => {
     }
   })
 }
+
+// 新增待办事项的 API 接口
+export const addTodoEventAPI = (content, date, time) => {
+  return request.post('/more/addtodo', qs.stringify({
+    content: content,
+    date: date,
+    time: time
+  }))
+}
+
+// 获取待办事项列表的 API 接口
+export const getTodoListAPI = () => {
+  return request.get('/more/todolist')
+}
+
+// 获取歌曲信息的 API 接口
+export const getSongInfoAPI = () => {
+  return request.get('/more/song')
+}

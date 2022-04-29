@@ -12,13 +12,13 @@
     <!-- grid宫格导航 -->
     <van-grid border>
       <van-grid-item icon="sign" text="签到" to="/home/signin" square/>
-      <van-grid-item icon="photo-o" text="课程" to="/" square/>
+      <van-grid-item icon-prefix="iconfont icon-kecheng-" icon="icon-kecheng-" text="课程" to="/" square/>
       <van-grid-item icon="records" text="答题" to="/home/questions" square/>
       <van-grid-item icon="video-o" text="视频" to="/home/videos" square/>
-      <van-grid-item icon="photo-o" text="社区交流" to="/" square/>
-      <van-grid-item icon="photo-o" text="积分兑换" to="/" square/>
-      <van-grid-item icon="photo-o" text="我的计划" to="/" square/>
-      <van-grid-item icon="photo-o" text="活动推荐" to="/" square/>
+      <van-grid-item icon-prefix="iconfont icon-shequ" icon="icon-shequ" text="社区交流" to="/" square/>
+      <van-grid-item icon-prefix="iconfont icon-jifen" icon="icon-jifen" text="积分兑换" to="/" square/>
+      <van-grid-item icon="todo-list-o" text="待办事项" to="/home/todo" square/>
+      <van-grid-item icon-prefix="iconfont icon-yinle" icon="icon-yinle" text="音乐" to="/home/music" square/>
     </van-grid>
     <!-- 滚动通知栏 -->
     <van-notice-bar left-icon="volume-o" mode="closeable" scrollable color="#1989fa" background="#ecf9ff">技111111111111111111111111111术是开发它的人的共同灵魂。</van-notice-bar>

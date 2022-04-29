@@ -23,19 +23,25 @@
         type="password"
         name="密码"
         label="密码"
-        left-icon="user-circle-o"
         placeholder="请输入密码"
         :rules="rules.password"
-      />
+      >
+        <template #left-icon>
+          <span class="iconfont icon-password"></span>
+        </template>
+      </van-field>
       <van-field
         v-model="userForm.rePassword"
         type="password"
         name="重复密码"
         label="重复密码"
-        left-icon="user-circle-o"
         placeholder="请重复输入密码"
         :rules="rules.rePassword"
-      />
+      >
+        <template #left-icon>
+          <span class="iconfont icon-password"></span>
+        </template>
+      </van-field>
       <div style="margin: 16px;">
         <van-button round block type="info" native-type="submit">注册</van-button>
       </div>

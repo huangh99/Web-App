@@ -22,6 +22,8 @@ import ResultDetail from '@/views/Questions/ResultDetail/ResultDetail'
 import SignIn from '@/views/SignIn/SignIn'
 import VideoShow from '@/views/VideoShow/VideoShow'
 import VideoDetail from '@/views/VideoDetail/VideoDetail'
+import ToDo from '@/views/ToDo/ToDo'
+import Music from '@/views/Music/Music'
 
 Vue.use(VueRouter)
 
@@ -68,10 +70,14 @@ const routes = [
   // 定义视频列表页面的路由规则
   { path: '/home/videos', component: VideoShow },
   // 定义视频详情页面的路由规则
-  { path: '/home/videos/detail/:id', component: VideoDetail, props: true }
+  { path: '/home/videos/detail/:id', component: VideoDetail, props: true },
+  // 定义待办页面的路由规则
+  { path: '/home/todo', component: ToDo },
+  // 定义音乐的路由规则
+  { path: '/home/music', component: Music }
 ]
 
-const pagePathArr = ['/user', '/home', '/knowledge']
+const pagePathArr = ['/user', '/home', '/knowledge', '/']
 
 const router = new VueRouter({
   routes
