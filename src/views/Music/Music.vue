@@ -21,7 +21,8 @@
           </div>
         </div>
       </div>
-      <audio ref="audio" :src="song.url"></audio>
+      <audio ref="audio" :src="song.path"></audio>
+      <!-- <audio ref="audio" src="../../assets/audio/大千世界-许嵩.mp3"></audio> -->
       <div class="music-controls">
         <div class="music-slider">
           <div>{{currentTime}}</div>
@@ -74,12 +75,14 @@ export default {
       this.content = ''
       if (this.index < 0) this.index = this.songList.length - 1
       this.song = this.songList[this.index]
+      this.end()
     },
     handleNext() {
       this.index++
       this.content = ''
       if (this.index === this.songList.length) this.index = 0
       this.song = this.songList[this.index]
+      this.end()
     },
     onChange(value) {
       this.audio.currentTime = value
