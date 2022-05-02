@@ -50,9 +50,6 @@ export default {
       this.getList()
     }
   },
-  created() {
-    // this.getList()
-  },
   mounted() {
     this.getList()
   }

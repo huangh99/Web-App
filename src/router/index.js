@@ -24,6 +24,10 @@ import VideoShow from '@/views/VideoShow/VideoShow'
 import VideoDetail from '@/views/VideoDetail/VideoDetail'
 import ToDo from '@/views/ToDo/ToDo'
 import Music from '@/views/Music/Music'
+import Community from '@/views/Community/Community'
+import InquiryDetail from '@/views/Community/InquiryDetail/InquiryDetail'
+import Inquiry from '@/views/Community/Inquiry/Inquiry'
+import Answer from '@/views/Community/Answer/Answer'
 
 Vue.use(VueRouter)
 
@@ -73,8 +77,16 @@ const routes = [
   { path: '/home/videos/detail/:id', component: VideoDetail, props: true },
   // 定义待办页面的路由规则
   { path: '/home/todo', component: ToDo },
-  // 定义音乐的路由规则
-  { path: '/home/music', component: Music }
+  // 定义音乐的路由规则Community
+  { path: '/home/music', component: Music },
+  // 定义社区讨论页面的路由规则
+  { path: '/home/community', component: Community },
+  // 定义提问详情页面的路由规则
+  { path: '/home/community/detail/:id', component: InquiryDetail, props: true },
+  // 定义发布提问页面的路由规则
+  { path: '/home/community/inquiry', component: Inquiry },
+  // 定义发布回答页面的路由规则
+  { path: '/home/community/answer/:questionId', component: Answer, props: true }
 ]
 
 const pagePathArr = ['/user', '/home', '/knowledge', '/']

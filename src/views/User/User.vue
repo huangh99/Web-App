@@ -62,7 +62,7 @@
         width="100%"
         fit="cover"
         :src="fileInfo.avatar"
-      />
+        />
       <van-uploader max-count="1" :after-read="afterRead" class="upload-box">
         <van-button hairline>选择文件</van-button>
       </van-uploader>

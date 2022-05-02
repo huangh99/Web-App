@@ -36,3 +36,64 @@ export const getTodoListAPI = () => {
 export const getSongInfoAPI = () => {
   return request.get('/more/song')
 }
+
+// 发布提问信息的 API 接口
+export const publicQuestion = (content, cate) => {
+  return request.post('/more/inquiry', qs.stringify({
+    content: content,
+    cate: cate
+  }))
+}
+
+// 获取提问信息列表的 API 接口
+export const getInquiryListAPI = (page) => {
+  return request.get('/more/inquiry', {
+    params: {
+      page: page
+    }
+  })
+}
+
+// 获取提问详情的 API 接口
+export const getInquiryDetailAPI = (id) => {
+  return request.get('/more/inquiry/detail/' + id)
+}
+
+// 发布回答的 API 接口
+export const publicAnswerAPI = (content, id) => {
+  return request.post('/more/inquiry/answer', qs.stringify({
+    content: content,
+    questionId: id
+  }))
+}
+
+// 获取回答信息的 API 接口
+export const getAnswerListAPI = (questionId, page) => {
+  return request.get('/more/inquiry/answer', {
+    params: {
+      questionId: questionId,
+      page: page
+    }
+  })
+}
+
+// 点赞回答的 API 接口
+export const starAnswerAPI = (answerId) => {
+  return request.post('/more/inquiry/answer/star', qs.stringify({
+    answerId: answerId
+  }))
+}
+
+// 取消点赞回答的 API 接口
+export const cancelStarAnswerAPI = (answerId) => {
+  return request.post('/more/inquiry/answer/cancelStar', qs.stringify({
+    answerId: answerId
+  }))
+}
+
+// 更新阅读次数的 API 接口
+export const updateReadNumberAPI = (questionId) => {
+  return request.post('/more/inquiry/readNum', qs.stringify({
+    questionId: questionId
+  }))
+}

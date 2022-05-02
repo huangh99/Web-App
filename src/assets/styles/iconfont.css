@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3359865 */
-  src: url('./iconfont/iconfont.woff2?t=1651222170889') format('woff2'),
-       url('./iconfont/iconfont.woff?t=1651222170889') format('woff'),
-       url('./iconfont/iconfont.ttf?t=1651222170889') format('truetype');
+  src: url('./iconfont/iconfont.woff2?t=1651490730279') format('woff2'),
+       url('./iconfont/iconfont.woff?t=1651490730279') format('woff'),
+       url('./iconfont/iconfont.ttf?t=1651490730279') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,30 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-good:before {
+  content: "\e62a";
+}
+
+.icon-wolaihuida:before {
+  content: "\e7bb";
+}
+
+.icon-tiwen:before {
+  content: "\e7bf";
+}
+
+.icon-tiwen1:before {
+  content: "\e62e";
+}
+
+.icon-fabu:before {
+  content: "\e642";
+}
+
+.icon-tubiaozhuanqu-09:before {
+  content: "\e644";
 }
 
 .icon-shequ:before {
