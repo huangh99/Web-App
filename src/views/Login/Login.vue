@@ -58,7 +58,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['updateTokenInfo']),
+    ...mapMutations(['updateTokenInfo', 'initUserInfo']),
     onSubmit() {
       this.login()
     },

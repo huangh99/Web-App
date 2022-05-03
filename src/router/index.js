@@ -28,6 +28,7 @@ import Community from '@/views/Community/Community'
 import InquiryDetail from '@/views/Community/InquiryDetail/InquiryDetail'
 import Inquiry from '@/views/Community/Inquiry/Inquiry'
 import Answer from '@/views/Community/Answer/Answer'
+import AIChat from '@/views/AIChat/AIChat'
 
 Vue.use(VueRouter)
 
@@ -86,7 +87,9 @@ const routes = [
   // 定义发布提问页面的路由规则
   { path: '/home/community/inquiry', component: Inquiry },
   // 定义发布回答页面的路由规则
-  { path: '/home/community/answer/:questionId', component: Answer, props: true }
+  { path: '/home/community/answer/:questionId', component: Answer, props: true },
+  // 定义智能聊天页面的路由规则
+  { path: '/home/chat', component: AIChat }
 ]
 
 const pagePathArr = ['/user', '/home', '/knowledge', '/']

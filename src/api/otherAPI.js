@@ -97,3 +97,12 @@ export const updateReadNumberAPI = (questionId) => {
     questionId: questionId
   }))
 }
+
+// 获取聊天回复的 API 接口
+export const getReplyAPI = (msg) => {
+  return request.get('/more/chat/reply', {
+    params: {
+      msg: msg
+    }
+  })
+}

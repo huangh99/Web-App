@@ -115,12 +115,6 @@ export default {
   },
   created() {
     this.getSignIn()
-    //   const today = new Date()
-  //   // this.currentYear = today.getFullYear()
-  //   // this.currentMonth = today.getMonth() + 1
-  //   // this.currentDate = today.getDate()
-  //   this.minDate = moment(today).startOf('month')._d
-  //   this.maxDate = moment(today).endOf('month')._d
   }
 }
 </script>
