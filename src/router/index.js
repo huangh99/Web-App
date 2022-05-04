@@ -29,6 +29,11 @@ import InquiryDetail from '@/views/Community/InquiryDetail/InquiryDetail'
 import Inquiry from '@/views/Community/Inquiry/Inquiry'
 import Answer from '@/views/Community/Answer/Answer'
 import AIChat from '@/views/AIChat/AIChat'
+import PointExchange from '@/views/PointExchange/PointExchange'
+import Curriculum from '@/views/User/Curriculum/Curriculum'
+import About from '@/views/User/About/About'
+import Help from '@/views/User/Help/Help'
+import UserSettings from '@/views/User/UserSettings/UserSettings'
 
 Vue.use(VueRouter)
 
@@ -58,6 +63,14 @@ const routes = [
   { path: '/user/security/changePwd', component: ChangePassword },
   // 定义个人资料页面的路由规则
   { path: '/user/information', component: Information },
+  // 定义我的课程页面的路由规则
+  { path: '/user/curriculum', component: Curriculum },
+  // 定义关于页面的路由规则
+  { path: '/user/about', component: About },
+  // 定义帮助与反馈页面的路由规则
+  { path: '/user/help', component: Help },
+  // 定义设置页面的路由规则
+  { path: '/user/settings', component: UserSettings },
   // 定义搜索结果页面的路由规则
   { path: '/knowledge/searchResult/:kw', component: SearchResult, props: true },
   // 定义文章详情页面的路由规则
@@ -89,7 +102,9 @@ const routes = [
   // 定义发布回答页面的路由规则
   { path: '/home/community/answer/:questionId', component: Answer, props: true },
   // 定义智能聊天页面的路由规则
-  { path: '/home/chat', component: AIChat }
+  { path: '/home/chat', component: AIChat },
+  // 定义积分兑换页面的路由规则
+  { path: '/home/exchange', component: PointExchange }
 ]
 
 const pagePathArr = ['/user', '/home', '/knowledge', '/']

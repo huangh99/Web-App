@@ -48,12 +48,12 @@
     <van-cell-group inset class="user-card2">
       <van-cell title="个人资料" is-link to="/user/information" icon="manager-o" />
       <van-cell title="安全与密码" is-link to="/user/security" icon="eye-o" />
-      <van-cell title="我的收藏" is-link to="/user" icon="star-o" />
+      <van-cell title="我的课程" is-link to="/user/curriculum" icon="star-o" />
     </van-cell-group>
     <van-cell-group inset class="user-card3">
-      <van-cell title="设置" is-link to="/user" icon="setting-o" />
-      <van-cell title="帮助与反馈" is-link to="/user" icon="question-o" />
-      <van-cell title="关于" is-link to="/user" icon="more-o" />
+      <van-cell title="设置" is-link to="/user/settings" icon="setting-o" />
+      <van-cell title="帮助与反馈" is-link to="/user/help" icon="question-o" />
+      <van-cell title="关于" is-link to="/user/about" icon="more-o" />
       <van-cell title="退出登录" is-link icon="warning-o" @click="logout" />
     </van-cell-group>
     <van-overlay z-index="999" :show="overlayShow" @click="show = overlayShow" class="overlay-box">

@@ -106,3 +106,28 @@ export const getReplyAPI = (msg) => {
     }
   })
 }
+
+// 获取积分兑换列表的 API 接口
+export const getExchangeListAPI = () => {
+  return request.get('/more/exchange')
+}
+
+// 积分兑换的 API 接口
+export const addPointExchangeAPI = (id, point) => {
+  return request.post('/more/exchange', qs.stringify({
+    exchange_id: id,
+    point: point
+  }))
+}
+
+// 更新积分信息的 API 接口
+export const updatePointInfoAPI = (num) => {
+  return request.post('/more/point', qs.stringify({
+    num: num
+  }))
+}
+
+// 获取课程信息的 API 接口
+export const getCurriculumInfoAPI = () => {
+  return request.get('/more/curriculum')
+}

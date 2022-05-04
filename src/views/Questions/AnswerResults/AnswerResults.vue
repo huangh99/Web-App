@@ -57,6 +57,7 @@
           </van-col>
         </van-row>
       </div>
+      <div class="point">本次答题您共获得 {{right_num}} 积分</div>
     </div>
     <div class="btn-box">
       <van-button plain type="info" to="/home/questions/detail">查看详情</van-button>
@@ -67,6 +68,7 @@
 <script>
 import { mapState } from 'vuex'
 import { getUserInfoAPI } from '@/api/userAPI'
+import { updatePointInfoAPI } from '@/api/otherAPI'
 export default {
   name: 'AnswerResults',
   data() {
@@ -87,6 +89,12 @@ export default {
       if (res.status === 0) {
         this.userInfo.name = res.data.nickname ? res.data.nickname : res.data.username
         this.userInfo.icon = res.data.user_pic
+      }
+    },
+    async updatePoint() {
+      const { data: res } = await updatePointInfoAPI(this.right_num)
+      if (res.status === 0) {
+        console.log(res)
       }
     }
   },
@@ -110,6 +118,9 @@ export default {
   },
   created() {
     this.getUserInfo()
+  },
+  mounted() {
+    this.updatePoint()
   }
 }
 </script>
@@ -183,6 +194,10 @@ export default {
           padding: 5px;
         }
       }
+    }
+    .point{
+      padding: 0 20px 10px;
+      color: #fff;
     }
   }
   .btn-box{

@@ -16,7 +16,7 @@
       <van-grid-item icon="video-o" text="视频" to="/home/videos" square/>
       <van-grid-item icon-prefix="iconfont icon-yinle" icon="icon-yinle" text="音乐" to="/home/music" square/>
       <van-grid-item icon-prefix="iconfont icon-shequ" icon="icon-shequ" text="社区问答" to="/home/community" square/>
-      <van-grid-item icon-prefix="iconfont icon-jifen" icon="icon-jifen" text="积分兑换" to="/" square/>
+      <van-grid-item icon-prefix="iconfont icon-kecheng-" icon="icon-kecheng-" text="课程兑换" to="/home/exchange" square/>
       <van-grid-item icon="todo-list-o" text="待办事项" to="/home/todo" square/>
       <van-grid-item icon-prefix="iconfont icon-duihua" icon="icon-duihua" text="智能聊天" to="/home/chat" square/>
     </van-grid>
