@@ -155,8 +155,6 @@ export default {
   }
   .calendar-box{
     margin: -25px 30px 0px;
-    // padding: -25px 30px 0px;
-    // padding: 10px 30px;
     .calendar-main{
     position: relative;
       width: 100%;

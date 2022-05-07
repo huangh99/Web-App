@@ -5,7 +5,7 @@
       <template #title>
         <div class="title-box">
           <!-- 标题 -->
-          <span>{{article.title}}-----{{article.id}}</span>
+          <span>{{article.title}}</span>
           <!-- 单张图片 -->
           <img v-lazy="article.cover[0]" v-if="article.cover.length===1" alt="" class="thumb">
         </div>
@@ -18,8 +18,6 @@
       <template #label>
         <div class="label-box">
           <span>作者 {{article.author}}&nbsp;&nbsp; {{article.comment_num}}评论 &nbsp;&nbsp; 发布日期:{{article.pubdate}}</span>
-          <!-- 关闭按钮 -->
-          <van-icon name="cross" />
         </div>
       </template>
     </van-cell>

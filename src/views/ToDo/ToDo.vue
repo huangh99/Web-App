@@ -5,7 +5,7 @@
       <van-image
         width="100%"
         height="200"
-        src="https://img0.baidu.com/it/u=4254278234,407794973&fm=253&fmt=auto&app=138&f=JPEG?w=658&h=240"
+        :src="require('@/assets/images/todo.jpeg')"
       />
     </div>
     <div class="todo-main">
@@ -133,10 +133,10 @@ export default {
 <style lang="less" scoped>
 .todo-box{
   position: absolute;
+  width: 100%;
   min-height: 100%;
   background-color: #F6F7FB;
   .addTodo{
-    // display: flex;
     position: fixed;
     right: 15px;
     bottom: 25px;

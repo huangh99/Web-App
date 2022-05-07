@@ -94,6 +94,7 @@ export default {
     end() {
       this.isPlay = false
       this.$refs.rotate.style.animationPlayState = 'paused'
+      this.$refs.lyric.style.top = '0px'
     },
     initSlider() {
       this.totalTime = formatSeconds(this.audio.duration)

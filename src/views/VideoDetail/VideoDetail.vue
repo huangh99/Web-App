@@ -27,8 +27,9 @@
       <van-divider></van-divider>
 
       <!-- 视频内容 -->
-      <div class="art-content">
-        <video :src="video.content" controls></video>
+      <div class="art-content" v-if="video.content" >
+        <!-- <video :src="video.content" controls></video> -->
+        <video :src="require('@/assets/video/video'+video.content+'.mp4')" controls></video>
       </div>
 
       <!-- 分割线 -->

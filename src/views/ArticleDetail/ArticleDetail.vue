@@ -6,7 +6,7 @@
     <!-- 文章信息区域 -->
     <div class="article-container" v-if="article">
       <!-- 文章标题 -->
-      <h1 class="art-title">{{article.title}}-----{{article.id}}</h1>
+      <h1 class="art-title">{{article.title}}</h1>
 
       <!-- 用户信息 -->
       <van-cell center :title="article.author" :label="article.pubdate">
@@ -27,7 +27,10 @@
       <van-divider></van-divider>
 
       <!-- 文章内容 -->
-      <div class="art-content" v-html="article.content"></div>
+      <div class="art-content" v-html="article.content">
+      <!-- <div class="art-content"> -->
+
+      </div>
 
       <!-- 分割线 -->
       <van-divider>End</van-divider>

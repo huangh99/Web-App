@@ -38,6 +38,7 @@ export default {
 .item-box{
   .item-content{
     position: relative;
+    padding: 10px 20px;
     .right{
       padding-left: 10px;
       .title{

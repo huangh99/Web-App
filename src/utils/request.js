@@ -4,6 +4,7 @@ import { Toast } from 'vant'
 const request = axios.create({
   // 指定请求的根路径
   baseURL: 'http://127.0.0.1:3007'
+  // baseURL: 'http://192.168.43.54:3007'
 })
 
 request.interceptors.request.use(

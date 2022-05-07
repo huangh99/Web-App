@@ -14,7 +14,7 @@
       <van-image
         width="100%"
         height="200"
-        :src="require('@/assets/images/banner图.jpeg')"
+        :src="require('@/assets/images/score_banner.jpeg')"
       />
     </div>
     <div class="bottom">
@@ -94,7 +94,7 @@ export default {
     async updatePoint() {
       const { data: res } = await updatePointInfoAPI(this.right_num)
       if (res.status === 0) {
-        console.log(res)
+
       }
     }
   },
@@ -130,7 +130,7 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url('../../../assets/images/背景图.jpeg');
+  background-image: url('../../../assets/images/score_bgimage.jpeg');
   background-size: 100% 100%;
   opacity: .8;
   .bottom{

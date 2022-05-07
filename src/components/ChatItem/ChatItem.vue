@@ -102,7 +102,7 @@ export default {
   }
   .send-box{
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     margin: 0px 20px 20px;
     .right{
       margin-left: 20px;
