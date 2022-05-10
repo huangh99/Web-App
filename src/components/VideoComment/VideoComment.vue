@@ -9,7 +9,7 @@
           <!-- 头部左侧 -->
           <div class="cmt-header-left">
             <img :src="item.commentator_pic" alt="" class="avatar">
-            <span class="uname">{{item.commentator_name}}-----{{item.id}}</span>
+            <span class="uname">{{item.commentator_name}}</span>
           </div>
           <!-- 头部右侧 -->
           <div class="cmt-header-right">

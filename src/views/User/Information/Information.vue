@@ -5,7 +5,7 @@
     <van-dialog v-model="nicknameShow" title="昵称修改" :show-confirm-button="false">
       <van-form @submit="onChangeNickname">
         <van-field
-          v-model="nickname"
+          v-model.trim="nickname"
           name="昵称"
           label="昵称"
           placeholder="请输入昵称"
@@ -41,7 +41,7 @@
       />
     </van-popup>
     <van-cell is-link title="邮箱" :value="userInfo.email" @click="showEmail" />
-    <van-dialog v-model="emailShow" title="邮箱修改" :show-confirm-button="false" >
+    <van-dialog v-model.trim="emailShow" title="邮箱修改" :show-confirm-button="false" >
       <van-form @submit="onChangeEmail">
         <van-field
           v-model="email"

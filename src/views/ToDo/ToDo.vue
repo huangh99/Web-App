@@ -1,6 +1,6 @@
 <template>
   <div class="todo-box">
-    <NavBar title="待办事项"></NavBar>
+    <NavBar title="待办计划"></NavBar>
     <div class="todo-top">
       <van-image
         width="100%"
@@ -17,9 +17,9 @@
         <van-field
           v-model="event.content"
           name="content"
-          label="待办事项"
-          placeholder="待办事项"
-          :rules="[{ required: true, message: '请填写待办事项' }]"
+          label="待办计划"
+          placeholder="待办计划"
+          :rules="[{ required: true, message: '请填写待办计划' }]"
         />
         <van-field
           readonly

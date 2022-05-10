@@ -2,7 +2,7 @@
   <div class="exchange-box">
     <van-sticky class="fixed-box">
       <van-nav-bar
-        title="积分兑换"
+        title="课程兑换"
         left-text="返回"
         left-arrow
         fixed
