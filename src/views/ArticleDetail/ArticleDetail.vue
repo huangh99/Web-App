@@ -28,7 +28,6 @@
 
       <!-- 文章内容 -->
       <div class="art-content" v-html="article.content">
-      <!-- <div class="art-content"> -->
 
       </div>
 
@@ -127,8 +126,8 @@ export default {
 }
 
 .art-content {
-  font-size: 12px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 28px;
   width: 100%;
   overflow-x: scroll;
   word-break: break-all;

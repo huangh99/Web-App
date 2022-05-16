@@ -15,7 +15,7 @@
     <van-dialog v-model="showDialog" title="添加待办" :show-confirm-button="false">
       <van-form @submit="onSubmit">
         <van-field
-          v-model="event.content"
+          v-model.trim="event.content"
           name="content"
           label="待办计划"
           placeholder="待办计划"
@@ -34,6 +34,7 @@
         <van-popup v-model="showDatePicker" position="bottom">
           <van-datetime-picker
             type="date"
+            v-model="currentDate"
             @confirm="selectDate"
             @cancel="showDatePicker = false"
           />
@@ -51,6 +52,7 @@
         <van-popup v-model="showTimePicker" position="bottom">
           <van-datetime-picker
             type="time"
+            v-model="currentTime"
             @confirm="selectTime"
             @cancel="showTimePicker = false"
           />
@@ -81,6 +83,8 @@ export default {
       showDialog: false,
       showDatePicker: false,
       showTimePicker: false,
+      currentDate: new Date(),
+      currentTime: '00:00',
       event: {
         content: '',
         date: '',
@@ -102,18 +106,24 @@ export default {
       this.addTodoEvent().then(() => {
         Toast.success('新增待办事项成功')
       })
-
       this.showDialog = false
-      this.event = {}
+      this.event.content = ''
+      this.event.date = ''
+      this.event.time = ''
+      this.currentDate = new Date()
+      this.currentTime = '00:00'
     },
     handlerCancel() {
       this.showDialog = false
-      this.event = {}
+      this.event.content = ''
+      this.event.date = ''
+      this.event.time = ''
+      this.currentDate = new Date()
+      this.currentTime = '00:00'
     },
     async addTodoEvent() {
       const { data: res } = await addTodoEventAPI(this.event.content, this.event.date, this.event.time)
       if (res.status === 0) {
-        // Toast.success('新增待办事项成功')
         this.getTodoList()
       }
     },

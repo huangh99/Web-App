@@ -1,7 +1,7 @@
 <template>
   <div class="chat-box">
     <van-nav-bar
-      title="智能问答"
+      title="智能交流"
       left-text="返回"
       left-arrow
       fixed

@@ -243,9 +243,10 @@ export default {
   background-color: white;
   textarea {
     flex: 1;
-    height: 66%;
+    height: 50%;
     border: 1px solid #efefef;
     background-color: #f8f8f8;
+    font-size: 14px;
     resize: none;
     border-radius: 6px;
     padding: 5px;

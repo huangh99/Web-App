@@ -2,7 +2,7 @@
   <div class="question-box">
     <div class="top">
       <van-nav-bar
-        title="标题"
+        title="限时答题"
         left-text="返回"
         :border="false"
         fixed
