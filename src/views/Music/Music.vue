@@ -22,7 +22,6 @@
         </div>
       </div>
       <audio ref="audio" :src="song.path"></audio>
-      <!-- <audio ref="audio" src="../../assets/audio/大千世界-许嵩.mp3"></audio> -->
       <div class="music-controls">
         <div class="music-slider">
           <div>{{currentTime}}</div>
@@ -186,6 +185,7 @@ export default {
           margin: 20px auto 0;
           border: 40px solid #000;
           border-radius: 50%;
+          box-shadow: 0px 0px 0px 4px #737477;
           animation: rotate 12s linear infinite forwards;
           animation-play-state: paused;
         }
@@ -200,13 +200,11 @@ export default {
       }
       .lyric-box{
         height: 224px;
-        // background-color: #ccc;
         overflow: hidden;
         .lyric-content{
           position: relative;
           left: 0;
           top: 0;
-          // background-color: rgba(11, 4, 115, 0.353);
           p{
             margin: 0;
             padding: 5px 0;
@@ -222,7 +220,6 @@ export default {
       }
     }
     .music-controls{
-      // background-color: blue;
       width: 100%;
       position: absolute;
       bottom: 40px;

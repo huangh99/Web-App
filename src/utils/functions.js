@@ -1,3 +1,4 @@
+// 格式化时间
 export const timeFormat = function(time) {
   const year = time.getFullYear()
   const month = time.getMonth() + 1
@@ -5,6 +6,7 @@ export const timeFormat = function(time) {
   return year + '/' + month + '/' + day
 }
 
+// 生成随机整数（可以指定范围）
 export const randomNum = function(minNum, maxNum) {
   switch (arguments.length) {
     case 1:
